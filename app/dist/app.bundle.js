@@ -91,9 +91,10 @@
   !*** ./app/app.js ***!
   \********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("(function() {\n  \"use strict\";\n\n  angular.module(\"solitaire\", [\"klondike\", \"ngDraggable\"]);\n})();\n\n\n//# sourceURL=webpack:///./app/app.js?");
+"use strict";
+eval("\n\nangular.module(\"solitaire\", [\"klondike\", \"ngDraggable\"]);\n\n\n//# sourceURL=webpack:///./app/app.js?");
 
 /***/ })
 
