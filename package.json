@@ -12,7 +12,8 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-junit-reporter": "^1.2.0",
-    "webpack": "^4.41.0"
+    "webpack": "^4.41.0",
+    "webpack-dev-server": "^3.8.1"
   },
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install",
