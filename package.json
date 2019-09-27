@@ -16,7 +16,9 @@
     "webpack-dev-server": "^3.8.1"
   },
   "scripts": {
-    "postinstall": "node node_modules/bower/bin/bower install",
+    "build": "webpack app/app.js --output app/dist/app.bundle.js  --mode development",
+    "watch": "webpack --watch app/app.js --output app/dist/app.bundle.js  --mode development",
+    "postinstall": "node node_mo dules/bower/bin/bower install",
     "prestart": "npm install",
     "start": "http-server -c-1 -o",
     "pretest": "npm install",
