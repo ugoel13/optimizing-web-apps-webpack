@@ -12,15 +12,16 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-junit-reporter": "^1.2.0",
+    "nodemon": "^1.19.3",
     "webpack": "^4.41.0",
     "webpack-dev-server": "^3.8.1"
   },
   "scripts": {
-    "build": "webpack app/app.js --output app/dist/app.bundle.js  --mode development",
-    "watch": "webpack --watch app/app.js --output app/dist/app.bundle.js  --mode development",
-    "postinstall": "node node_mo dules/bower/bin/bower install",
+    "build": "webpack",
+    "watch": "npm run build -- --watch",
+    "start": "NODE_ENV=development nodemon -w webpack.config.js -x webpack-dev-server",
+    "postinstall": "node node_modules/bower/bin/bower install",
     "prestart": "npm install",
-    "start": "http-server -c-1 -o",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"
