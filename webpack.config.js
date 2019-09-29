@@ -1,9 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const isDevelopment = process.env.NODE_ENV === "development";
-console.log(`This is a ${isDevelopment ? "Development" : "Production"} build`);
-
 const baseConfig = {
   entry: "./app/app.js",
   output: {
@@ -20,8 +17,13 @@ const baseConfig = {
   plugins: [new webpack.NamedModulesPlugin()]
 };
 
-if (isDevelopment) {
-  baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-}
-
-module.exports = baseConfig;
+module.exports = function(env) {
+  const isDevelopment = env === "development";
+  console.log(
+    `This is a ${isDevelopment ? "Development" : "Production"} build`
+  );
+  if (isDevelopment) {
+    baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+  }
+  return baseConfig;
+};
